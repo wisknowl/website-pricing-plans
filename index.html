@@ -56,9 +56,7 @@
                     </li>
                 </ul>
                 <div class="mt-8">
-                    <!-- The mailto: link will open the user's email client and pre-fill the message -->
-                    <!-- You need to replace 'your-email@example.com' with your actual email address -->
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wisknowltabi123@gmail.com&su=I%20want%20the%2012%20Months%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%2012%20Months%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]" target="_blank" rel="noopener" class="block w-full text-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200">
+                    <a id="choose-plan-12mo" href="#" class="block w-full text-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200">
                         Choose Plan
                     </a>
                 </div>
@@ -99,9 +97,7 @@
                     </li>
                 </ul>
                 <div class="mt-8">
-                    <!-- The mailto: link will open the user's email client and pre-fill the message -->
-                    <!-- You need to replace 'your-email@example.com' with your actual email address -->
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wisknowltabi123@gmail.com&su=I%20want%20the%204%20Years%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%204%20Years%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]" target="_blank" rel="noopener" class="block w-full text-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-indigo-600 bg-white hover:bg-gray-50 transition-colors duration-200">
+                    <a id="choose-plan-4years" href="#" class="block w-full text-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-indigo-600 bg-white hover:bg-gray-50 transition-colors duration-200">
                         Choose Plan
                     </a>
                 </div>
@@ -136,11 +132,42 @@
                     </li>
                 </ul>
                 <div class="mt-8">
-                    <!-- The mailto: link will open the user's email client and pre-fill the message -->
-                    <!-- You need to replace 'your-email@example.com' with your actual email address -->
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wisknowltabi123@gmail.com&su=I%20want%20the%202%20Years%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%202%20Years%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]" target="_blank" rel="noopener" class="block w-full text-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200">
+                    <a id="choose-plan-2years" href="#" class="block w-full text-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200">
                         Choose Plan
                     </a>
+<script>
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    // Plan details
+    const plans = [
+        {
+            id: 'choose-plan-12mo',
+            mailto: 'mailto:wisknowltabi123@gmail.com?subject=I%20want%20the%2012%20Months%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%2012%20Months%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]',
+            gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=wisknowltabi123@gmail.com&su=I%20want%20the%2012%20Months%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%2012%20Months%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]'
+        },
+        {
+            id: 'choose-plan-2years',
+            mailto: 'mailto:wisknowltabi123@gmail.com?subject=I%20want%20the%202%20Years%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%202%20Years%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]',
+            gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=wisknowltabi123@gmail.com&su=I%20want%20the%202%20Years%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%202%20Years%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]'
+        },
+        {
+            id: 'choose-plan-4years',
+            mailto: 'mailto:wisknowltabi123@gmail.com?subject=I%20want%20the%204%20Years%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%204%20Years%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]',
+            gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=wisknowltabi123@gmail.com&su=I%20want%20the%204%20Years%20Hosting%20Plan&body=I%20would%20like%20to%20proceed%20with%20the%204%20Years%20Hosting%20Plan.%20Please%20send%20me%20the%20details%20for%20payment.%0A%0AAccount%20Name:%20[Your%20Name]%0AAccount%20Number:%20[Your%20Number]'
+        }
+    ];
+    plans.forEach(plan => {
+        const btn = document.getElementById(plan.id);
+        if (btn) {
+            btn.href = isMobile() ? plan.mailto : plan.gmail;
+            if (!isMobile()) {
+                btn.target = "_blank";
+                btn.rel = "noopener";
+            }
+        }
+    });
+</script>
                 </div>
             </div>
         </div>
